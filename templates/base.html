@@ -13,11 +13,20 @@
     <header>
         <h1><a href="{% url 'home' %}">Django Blog</a></h1>
         <div>
+            {% if user.is_authenticated %}
+                <p style="color: white;">Hi {{ user.username }}!</p>
+                <!-- <a href="{% url 'logout' %}"><button>Log Out</button></a> -->
+            {% else %}
+                <p style="color: white;">Usted no se encuentra autenticado</p>
+                <a href="{% url 'login' %}"><button>Login</button></a>
+            {% endif %}
             <a href="{% url 'post_new' %}"><button>New post</button></a>
+            
             <br><br>
         </div>
     </header>
     <section>
+        
 
         {% block content %}
         {% endblock content %}

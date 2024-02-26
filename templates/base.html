@@ -19,6 +19,7 @@
             {% else %}
                 <p style="color: white;">Usted no se encuentra autenticado</p>
                 <a href="{% url 'login' %}"><button>Login</button></a>
+                <a href="{% url 'signup' %}"><button>Sign Up</button></a>
             {% endif %}
             <a href="{% url 'post_new' %}"><button>New post</button></a>
             
